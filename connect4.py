@@ -83,7 +83,7 @@ height = (ROW_COUNT+1) * SQUARESIZE
 
 size = (width, height)
 
-RADIUS = int(SQUARESIZE/2 - 5)
+RADIUS = int(SQUARESIZE/2 - 3)
 
 screen = pygame.display.set_mode(size)
 draw_board(board)
