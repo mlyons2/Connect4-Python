@@ -6,8 +6,8 @@ import math
 
 BLUE = (38,191,201)
 BLACK = (0,0,0)
-RED = (255,0,0)
-YELLOW = (255,255,0)
+RED = (190,85,73)
+YELLOW = (255,255,143)
 
 ROW_COUNT = 6
 COLUMN_COUNT = 7
