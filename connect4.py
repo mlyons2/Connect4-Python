@@ -89,7 +89,7 @@ screen = pygame.display.set_mode(size)
 draw_board(board)
 pygame.display.update()
 
-myfont = pygame.font.SysFont("comicsans", 75)
+myfont = pygame.font.SysFont("arial", 75)
 
 while not game_over:
 
