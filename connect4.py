@@ -10,8 +10,8 @@ PURPLE = (103, 0, 103) # Changed the color and name of Player 1 to purple
 ORANGE = (255, 101, 0) # Changed the color and name of Player 2 to orange
 WHITE = (255, 255, 255)
 
-ROW_COUNT = 6
-COLUMN_COUNT = 7
+ROW_COUNT = 10
+COLUMN_COUNT = 10
 
 def create_board():
 	board = np.zeros((ROW_COUNT,COLUMN_COUNT))
