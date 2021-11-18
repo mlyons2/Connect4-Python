@@ -2,11 +2,13 @@ import numpy as np
 import pygame
 import sys
 import math
+
 # Clemson inspired colors:
 WHITE = (255, 255, 255) # Changed the color and name of the Board color to white
 GRAY = (166, 166, 166) # Changed the color and name of the Background color to gray
 PURPLE = (103, 0, 103) # Changed the color and name of Player 1 to purple 
 ORANGE = (255, 101, 0) # Changed the color and name of Player 2 to orange
+WHITE = (255, 255, 255)
 
 ROW_COUNT = 6
 COLUMN_COUNT = 7
@@ -119,7 +121,7 @@ while not game_over:
 					drop_piece(board, row, col, 1)
 
 					if winning_move(board, 1):
-						label = myfont.render("Player 1 wins!!", 1, PURPLE)
+						label = myfont.render("Player 1 wins!!", 1, WHITE)
 						screen.blit(label, (40,10))
 						game_over = True
 
@@ -134,7 +136,8 @@ while not game_over:
 					drop_piece(board, row, col, 2)
 
 					if winning_move(board, 2):
-						label = myfont.render("Player 2 wins!!", 1, ORANGE)
+						label = myfont.render("Player 2 wins!!", 1, WHITE)
+
 						screen.blit(label, (40,10))
 						game_over = True
 
@@ -145,4 +148,4 @@ while not game_over:
 			turn = turn % 2
 
 			if game_over:
-				pygame.time.wait(3000)
+				pygame.time.wait(30000)
