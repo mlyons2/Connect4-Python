@@ -3,10 +3,11 @@ import pygame
 import sys
 import math
 
-BLUE = (38,191,201)
-BLACK = (0,0,0)
-RED = (190,85,73)
-YELLOW = (255,255,143)
+# Clemson inspired colors:
+WHITE = (255, 255, 255) # Changed the color and name of the Board color to white
+GRAY = (166, 166, 166) # Changed the color and name of the Background color to gray
+PURPLE = (103, 0, 103) # Changed the color and name of Player 1 to purple 
+ORANGE = (255, 101, 0) # Changed the color and name of Player 2 to orange
 WHITE = (255, 255, 255)
 
 ROW_COUNT = 6
@@ -58,15 +59,15 @@ def winning_move(board, piece):
 def draw_board(board):
 	for c in range(COLUMN_COUNT):
 		for r in range(ROW_COUNT):
-			pygame.draw.rect(screen, BLUE, (c*SQUARESIZE, r*SQUARESIZE+SQUARESIZE, SQUARESIZE, SQUARESIZE))
-			pygame.draw.circle(screen, BLACK, (int(c*SQUARESIZE+SQUARESIZE/2), int(r*SQUARESIZE+SQUARESIZE+SQUARESIZE/2)), RADIUS)
+			pygame.draw.rect(screen, WHITE, (c*SQUARESIZE, r*SQUARESIZE+SQUARESIZE, SQUARESIZE, SQUARESIZE))
+			pygame.draw.circle(screen, GRAY, (int(c*SQUARESIZE+SQUARESIZE/2), int(r*SQUARESIZE+SQUARESIZE+SQUARESIZE/2)), RADIUS)
 	
 	for c in range(COLUMN_COUNT):
 		for r in range(ROW_COUNT):		
 			if board[r][c] == 1:
-				pygame.draw.circle(screen, RED, (int(c*SQUARESIZE+SQUARESIZE/2), height-int(r*SQUARESIZE+SQUARESIZE/2)), RADIUS)
+				pygame.draw.circle(screen, PURPLE, (int(c*SQUARESIZE+SQUARESIZE/2), height-int(r*SQUARESIZE+SQUARESIZE/2)), RADIUS)
 			elif board[r][c] == 2: 
-				pygame.draw.circle(screen, YELLOW, (int(c*SQUARESIZE+SQUARESIZE/2), height-int(r*SQUARESIZE+SQUARESIZE/2)), RADIUS)
+				pygame.draw.circle(screen, ORANGE, (int(c*SQUARESIZE+SQUARESIZE/2), height-int(r*SQUARESIZE+SQUARESIZE/2)), RADIUS)
 	pygame.display.update()
 
 
@@ -99,16 +100,16 @@ while not game_over:
 			sys.exit()
 
 		if event.type == pygame.MOUSEMOTION:
-			pygame.draw.rect(screen, BLACK, (0,0, width, SQUARESIZE))
+			pygame.draw.rect(screen, GRAY, (0,0, width, SQUARESIZE))
 			posx = event.pos[0]
 			if turn == 0:
-				pygame.draw.circle(screen, RED, (posx, int(SQUARESIZE/2)), RADIUS)
+				pygame.draw.circle(screen, PURPLE, (posx, int(SQUARESIZE/2)), RADIUS)
 			else: 
-				pygame.draw.circle(screen, YELLOW, (posx, int(SQUARESIZE/2)), RADIUS)
+				pygame.draw.circle(screen, ORANGE, (posx, int(SQUARESIZE/2)), RADIUS)
 		pygame.display.update()
 
 		if event.type == pygame.MOUSEBUTTONDOWN:
-			pygame.draw.rect(screen, BLACK, (0,0, width, SQUARESIZE))
+			pygame.draw.rect(screen, GRAY, (0,0, width, SQUARESIZE))
 			#print(event.pos)
 			# Ask for Player 1 Input
 			if turn == 0:
@@ -136,6 +137,7 @@ while not game_over:
 
 					if winning_move(board, 2):
 						label = myfont.render("Player 2 wins!!", 1, WHITE)
+
 						screen.blit(label, (40,10))
 						game_over = True
 
