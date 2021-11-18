@@ -7,6 +7,7 @@ BLUE = (38,191,201)
 BLACK = (0,0,0)
 RED = (190,85,73)
 YELLOW = (255,255,143)
+WHITE = (255, 255, 255)
 
 ROW_COUNT = 6
 COLUMN_COUNT = 7
@@ -119,7 +120,7 @@ while not game_over:
 					drop_piece(board, row, col, 1)
 
 					if winning_move(board, 1):
-						label = myfont.render("Player 1 wins!!", 1, RED)
+						label = myfont.render("Player 1 wins!!", 1, WHITE)
 						screen.blit(label, (40,10))
 						game_over = True
 
@@ -134,7 +135,7 @@ while not game_over:
 					drop_piece(board, row, col, 2)
 
 					if winning_move(board, 2):
-						label = myfont.render("Player 2 wins!!", 1, YELLOW)
+						label = myfont.render("Player 2 wins!!", 1, WHITE)
 						screen.blit(label, (40,10))
 						game_over = True
 
